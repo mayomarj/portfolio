@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #FFFDF2;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    nav{
+        border-bottom: 0.5px solid black;
+        /* background-color: #333;
+         float: left;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        z-index: 1000; */
+    }
+    /* .navbar a{
+        color: white;
+    }
+    h3{
+        color: white;
+    } */
+    .btn{
+        background-color: #f8512f ;
+        /* color: white; */
+    }
+    .custom-radius{
+        border-radius: 20px;
+    }
+    .custom-radius:hover{
+        border: 1px solid #f8512f;
+        background-color: transparent;
+        color: #f8512f;
+    }
+    a .nav-link{
+        font-weight: 400;
+        color: green;
+    }
+    .Home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* h4{
+        color: white;
+    }
+    p{
+        color: white;
+    } */
+</style>
+<body>
+    <main>
+        <section>
+            <!-- As a link -->
+            <nav class="navbar bg-body-tertiary fixed-top p-1">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Marja Mayo</a>
+                    <!-- div to rightmost of nav bar -->
+                    <div class="d-flex justify-content-end">
+                        <a class = "nav-link p-3" href="#Home">Home</a>
+                        <a class = "nav-link p-3" href="#portfolio">Portfolio</a>
+                        <a class = "nav-link p-3" href="#about">About</a>
+                        <a class = "nav-link p-3" href="#"><button class="btn btn-sm custom-radius" type="button">Contact Me</button></a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <section id="Home">
+            <!-- intro section -->
+            <div class="container vh-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-6 text-center"> <!-- Adjust column size as needed -->
+                        <div class="p-3">
+                            <h4>Hi, I'm Marja Mayo</h4>
+                            <p>Hi, I'm Marjamayo, an adaptable web developer with a passion for creating seamless web functionalities and designs. I specialize in building intuitive, user-friendly websites that bring ideas to life. Let's work together to make your online presence stand out!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id = "portfolio">
+            <div class="container vh-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-6 text-center"> <!-- Adjust column size as needed -->
+                        <div class="p-3">
+                            <h4>Portfolio</h4>
+                            <p>This div is vertically centered using the Bootstrap grid.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id = "about">
+            <div class="container vh-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-6 text-center"> <!-- Adjust column size as needed -->
+                        <div class="p-3">
+                            <h4>About</h4>
+                            <p>This div is vertically centered using the Bootstrap grid.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
