@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <style>
+    /* css styles */
     body{
         margin: 0;
         padding: 0;
@@ -15,8 +22,29 @@
     html {
         scroll-behavior: smooth;
     }
+    #Home{
+        background-color: #2B3935;
+    }
+    a{
+        font-family: 'kodchasan';
+    }
+    .nav-link .btn{
+        font-family: 'kodchasan';
+        font-weight: 700;
+    }
+    .nav-link{
+        color: white;
+    }
+    .navbar-brand:hover, .nav-link:hover{
+        color: #78F8C4;
+    }
     nav{
-        border-bottom: 0.5px solid black;
+        /* border-bottom: 0.5px solid black; */
+        background-color: #2B3935;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         /* background-color: #333;
          float: left;
         top: 0;
@@ -25,23 +53,28 @@
         padding: 10px;
         z-index: 1000; */
     }
-    /* .navbar a{
+    .container-fluid{
+        width: 80%;
+    }
+    .navbar-brand {
+        font-family: "kodchasan";
+        font-weight: 200;
         color: white;
     }
     h3{
-        color: white;
-    } */
+        /* color: white; */
+    }
     .btn{
-        background-color: #f8512f ;
+        background-color: #78F8C4 ;
         /* color: white; */
     }
     .custom-radius{
         border-radius: 20px;
     }
     .custom-radius:hover{
-        border: 1px solid #f8512f;
+        border: 1px solid #78F8C4;
         background-color: transparent;
-        color: #f8512f;
+        color: #78F8C4;
     }
     a .nav-link{
         font-weight: 400;
@@ -52,26 +85,43 @@
         justify-content: center;
         align-items: center;
     }
-    /* h4{
+    h4{
+        font-family: "Lexend Zetta";
+        font-weight: 700;
+        text-align: start;
         color: white;
+        letter-spacing: 5px;
     }
     p{
+        font-family: "kodchasan";
+        text-align: start;
+        font-weight: 200;
         color: white;
-    } */
+        letter-spacing: 2px;
+    }
+    .col img{
+        width: 100%;
+        height: auto;
+        border-radius: 100px;
+    }
+    #portfolio h4, #portfolio p{
+        color: #2B3935;
+    }
 </style>
+
 <body>
     <main>
         <section>
             <!-- As a link -->
             <nav class="navbar bg-body-tertiary fixed-top p-1">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Marja Mayo</a>
+                    <a class="navbar-brand" href="#">MARJA MAYO</a>
                     <!-- div to rightmost of nav bar -->
                     <div class="d-flex justify-content-end">
-                        <a class = "nav-link p-3" href="#Home">Home</a>
-                        <a class = "nav-link p-3" href="#portfolio">Portfolio</a>
-                        <a class = "nav-link p-3" href="#about">About</a>
-                        <a class = "nav-link p-3" href="#"><button class="btn btn-sm custom-radius" type="button">Contact Me</button></a>
+                        <a class = "nav-link p-3" href="#Home">HOME</a>
+                        <a class = "nav-link p-3" href="#about">ABOUT</a>
+                        <a class = "nav-link p-3" href="#portfolio">PORTFOLIO</a>
+                        <a class = "nav-link p-3" href="#"><button class="btn btn-sm custom-radius" type="button">CONTACT ME</button></a>
                     </div>
                 </div>
             </nav>
@@ -79,18 +129,43 @@
 
         <section id="Home">
             <!-- intro section -->
+            <div class="container vh-100 w-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col">
+                        <h4>HI, I'M MARJA MAYO</h4>
+                        <p>a PHP web developer with a passion for creating seamless web functionalities and designs. Let's work together to make your online presence stand out!</p>
+                    </div>
+                    <div class="col">
+                        <img src="images/remove_bg.png" alt="Marja Mayo - web developer">
+                    </div>
+                </div>
+                <!-- <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-6 text-center"> 
+                        <div class="row">
+                            <div class="col">
+                                <h4>Hi, I'm Marja Mayo</h4>
+                                <p>a PHP web developer with a passion for creating seamless web functionalities and designs. Let's work together to make your online presence stand out!</p>
+                            </div>
+                            <div class="col">
+                                <img src="#" alt="Marja Mayo - web developer">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <section id = "about">
             <div class="container vh-100">
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-6 text-center"> <!-- Adjust column size as needed -->
                         <div class="p-3">
-                            <h4>Hi, I'm Marja Mayo</h4>
-                            <p>Hi, I'm Marjamayo, an adaptable web developer with a passion for creating seamless web functionalities and designs. I specialize in building intuitive, user-friendly websites that bring ideas to life. Let's work together to make your online presence stand out!</p>
+                            <h4>About</h4>
+                            <p>This div is vertically centered using the Bootstrap grid.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <section id = "portfolio">
             <div class="container vh-100">
                 <div class="row h-100 align-items-center justify-content-center">
@@ -104,23 +179,11 @@
             </div>
         </section>
 
-        <section id = "about">
-            <div class="container vh-100">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-6 text-center"> <!-- Adjust column size as needed -->
-                        <div class="p-3">
-                            <h4>About</h4>
-                            <p>This div is vertically centered using the Bootstrap grid.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
     </main>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </html>
