@@ -28,6 +28,52 @@
     a{
         font-family: 'kodchasan';
     }
+    #menuToggle {
+        display: none;
+    }
+
+    .menu-icon {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+    .menu-icon div {
+        height: 3px;
+        background-color: black;
+    }
+    /* Mobile menu settings */
+    .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #f8f9fa;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+    }
+
+    /* Show burger icon and hide links on mobile */
+    @media (max-width: 768px) {
+        .nav-link {
+            display: none;
+        }
+
+        .menu-icon {
+            display: flex;
+        }
+
+        /* Show menu when checkbox is checked */
+        #menuToggle:checked + .nav-links-mobile {
+            display: flex;
+        }
+    }
+
+
     .nav-link .btn{
         font-family: 'kodchasan';
         font-weight: 700;
@@ -118,10 +164,26 @@
                     <a class="navbar-brand" href="#">MARJA MAYO</a>
                     <!-- div to rightmost of nav bar -->
                     <div class="d-flex justify-content-end">
+                         <!-- Checkbox hack for burger menu -->
+                        <input type="checkbox" id="menuToggle">
+                        <label for="menuToggle" class="menu-icon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </label>
+
                         <a class = "nav-link p-3" href="#Home">HOME</a>
                         <a class = "nav-link p-3" href="#about">ABOUT</a>
                         <a class = "nav-link p-3" href="#portfolio">PORTFOLIO</a>
                         <a class = "nav-link p-3" href="#"><button class="btn btn-sm custom-radius" type="button">CONTACT ME</button></a>
+                    </div>
+
+                     <!-- Mobile menu (hidden by default) -->
+                    <div class="nav-links-mobile">
+                        <a class="nav-link" href="#Home">HOME</a>
+                        <a class="nav-link" href="#about">ABOUT</a>
+                        <a class="nav-link" href="#portfolio">PORTFOLIO</a>
+                        <a class="nav-link" href="#"><button class="btn btn-sm custom-radius" type="button">CONTACT ME</button></a>
                     </div>
                 </div>
             </nav>
