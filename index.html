@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Marja Mayo</title>
+</head>
+<style>
+    @keyframes zoomOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+    }
+
+/* Slide in from the right and zoom in */
+    @keyframes zoomInSlideRight {
+        0% {
+            transform: scale(0.8) translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1) translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    .portfolio_container{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        width: 100%;
+    }
+    #navbar{
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: transparent;
+        position: fixed; /* This makes it stick to the top */
+        top: 0; /* Positions it at the top */
+        left: 0; /* Ensures it starts from the left */
+        width: 100%; /* Makes it span the full width */
+        z-index: 10;
+        margin-bottom: 10vh;
+        overflow-x: hidden;
+    }
+    #navbar .container{
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Allow the navbar items to wrap on smaller screens */
+        justify-content: center;
+    }
+    #navbar a{
+        text-decoration: none;
+        color: white;
+        padding-left: 1vh;
+        padding-right: 1vh;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        
+    }
+    #navbar a::before,
+    #navbar a::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+    #navbar a::before {
+        background-color: #54b3d6;
+        height: 2px;
+        bottom: 0;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    #navbar a::after {
+        content: attr(data-replace);
+        height: 100%;
+        top: 0;
+        transform-origin: 100% 50%;
+        transform: translate3d(200%, 0, 0);
+        transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+        color: #54b3d6;
+    }
+
+    #navbar a:hover::before {
+        transform-origin: 0% 50%;
+        transform: scaleX(1);
+    }
+    #navbar a:hover::after {
+        transform: translate3d(0, 0, 0);
+    }
+
+    #navbar a span {
+        display: inline-block;
+        transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    #navbar a:hover span {
+        transform: translate3d(-200%, 0, 0);
+    }
+    #navbar a:hover {
+        
+        color: transparent; 
+    }
+    #home{
+        background-color: #007054;
+        
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  */
+    }
+
+    /* #home1{
+        background-color: #007054;
+        padding-top: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    } */
+    .container{
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #76dbc1;
+        width: 100%;
+    }
+    h5{
+        font-size: 100px;
+    }
+    p{
+        font-size: 20px;
+    }
+    #about{
+        height: 100vh;
+        background-color: #70003a;
+    }
+    #skills{
+        height: 100vh;
+        background-color: black;
+    }
+    /* #home1 .panel{
+        display: none;
+    } */
+    .panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        display: none;
+        /* transform: scale(0.8) translateX(100%);
+        transition: opacity 0.5s ease, transform 0.5s ease; */
+    }
+    
+     /* Flip Animation */
+     .panel.show {
+        opacity: 1;
+        display: flex;
+        transform: scale(1) translateX(0);
+        z-index: 1;
+    }
+
+    .panel.exiting {
+        animation: zoomOut 0.5s ease forwards;
+        z-index: 0;
+        
+    }
+
+    .panel.entering {
+        animation: zoomInSlideRight 0.5s ease forwards;
+        z-index: 2;
+    }
+    .portfolio_container {
+        position: relative;
+    }
+    @media (max-width: 768px) {
+        /* .panel {
+            width: 100%;
+            height: 100vh; 
+            padding: 5vh 0; 
+            transform: scale(0.9) translateX(100%); 
+            overflow-x: hidden;
+            border-right: solid 3px white;
+        }
+
+         .panel.show {
+            opacity: 1;
+            
+            display: flex;
+            transform: scale(1) translateX(0);
+            transition: visibility 0s linear 0s;
+            z-index: 2;
+        }
+
+        .panel.exiting {
+            animation: zoomOut 0.5s ease forwards;
+        }
+
+        .panel.entering {
+            animation: zoomInSlideRight 0.5s ease forwards;
+        } */
+    }
+</style>
+<body>
+    <div class="portfolio_container">
+        <section id="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <div class="nav-item">
+                            <a href="#home" data-replace="/* HOME */" data-target="home">/* HOME */</a>
+                            <a href="#about" data-replace="/* ABOUT */" data-target="about">/* ABOUT */</a>
+                            <a href="#skills" data-replace="/* SKILLS */" data-target="skills">/* SKILLS */</a>
+                            <a href="#work" data-replace="/* WORK */" data-target="work">/* WORK */</a>
+                            <a href="#contact" data-replace="/* CONTACT */" data-target="contact">/* CONTACT */</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section id="home" class="panel show">
+            <div class="container vh-100">
+                <div class="title">
+                    <h5>MARJA MAYO</h5>
+                </div>
+                <div class="subtitle">
+                    <p>ASPIRING WEB DEVELOPER</p>
+                </div>
+            </div>
+        </section>
+
+         <section id="about" class="panel">
+            <div class="container vh-100">
+                <div class="title">
+                    <h5>ABOUT</h5>
+                </div>
+                <div class="subtitle">
+                    <p>ABOUT PAGE</p>
+                </div>
+            </div>
+        </section>
+
+         <section id="skills" class="panel">
+
+        </section>
+        <section id="work" class="panel">
+
+        </section>
+
+        <section id="contact" class="panel">
+
+        </section> 
+    </div>
+    
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('#navbar a');
+        const panels = document.querySelectorAll('.panel');
+        const body = document.body;
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                const targetId = link.dataset.target; // Get the target panel ID
+                const currentPanel = document.querySelector('.panel.show');
+                const targetPanel = document.getElementById(targetId);
+
+                if (currentPanel && targetPanel && currentPanel !== targetPanel) {
+                    // Start the animation for the current panel
+                    currentPanel.classList.add('exiting');
+                    currentPanel.classList.remove('show');
+
+                    
+                    
+                    // Delay showing the target panel to allow the current panel to animate out
+                    setTimeout(() => {
+                        currentPanel.classList.remove('exiting'); // Clean up
+                        targetPanel.classList.add('entering');
+                        targetPanel.style.display = 'flex'; // Show the target panel
+                        targetPanel.classList.add('show');
+                        
+                        // Remove the entering class after the animation ends
+                        targetPanel.addEventListener('animationend', () => {
+                            targetPanel.classList.remove('entering');
+                        }, { once: true });
+
+                        // Delay the background color update to match the animation
+                        setTimeout(() => {
+                            // Dynamically update the body background color based on the target panel
+                            const targetColor = window.getComputedStyle(targetPanel).backgroundColor;
+                            body.style.backgroundColor = targetColor; // Update background color
+                        }, 1000); // 1-second delay to match the sliding effect
+                    }, 500); // Match the animation duration for the current panel
+                }
+            });
+        });
+
+        // Initialize the background color for the first panel
+        const initialPanel = document.querySelector('.panel.show');
+        if (initialPanel) {
+            const initialColor = window.getComputedStyle(initialPanel).backgroundColor;
+            body.style.backgroundColor = initialColor; // Set initial background color
+        }
+    });
+
+</script>
+
+</html>
+
